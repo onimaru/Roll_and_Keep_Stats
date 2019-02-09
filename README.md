@@ -1,5 +1,6 @@
 # Roll_and_Keep_Stats
 Some statistics data and graphs on the roll and keep system used in the Legends of Five Rings RPG.
+## Percentage table
 
 <table border="1" class="dataframe">
   <thead>
@@ -1069,3 +1070,9 @@ Some statistics data and graphs on the roll and keep system used in the Legends 
     </tr>
   </tbody>
 </table>
+
+## Example of roll value distribution
+
+<img src="https://github.com/onimaru/Roll_and_Keep_Stats/blob/master/images/Distribution_6k4_rolls.png"
+     alt="Dist_table"
+     style="float: left; margin-right: 10px;" />
