@@ -8,20 +8,20 @@ from scipy import stats
 
 
 # ============================================================= #
-def dice(sides,rolls):
+def simple_rolls(sides,rolls):
     roll = lambda sides: random.randint(1,sides+1)
     n_rolls = [roll(sides) for i in range(rolls)]
     return n_rolls
 
     '''
     Example:
-    >>> dice(10,10)
+    >>> simple_rolls(10,10)
     >>> [10, 1, 3, 7, 9, 4, 6, 3, 4, 1]    
     '''
     
 # ============================================================= #    
 def roll_n_keep(sides,rolls,keep):
-    result = dice(sides,rolls)[:keep]
+    result = simple_rolls(sides,rolls)[:keep]
     result_sum = sum(result)
     return result
 
@@ -32,7 +32,7 @@ def roll_n_keep(sides,rolls,keep):
     '''
 
 # ============================================================= #    
-def final_roll(sides,rolls,keep,explode,explode_value=10):
+def roll_n_keep_ex(sides,rolls,keep,explode,explode_value=10):
     if explode == False:
         x = roll_n_keep(sides,rolls,keep)
     while explode:
@@ -50,7 +50,7 @@ def final_roll(sides,rolls,keep,explode,explode_value=10):
 
     '''
     Example:
-    >>> final_roll(10,5,3,True)
+    >>> roll_n_keep_ex(10,5,3,True)
     >>> 14
     '''
     
@@ -58,7 +58,7 @@ def final_roll(sides,rolls,keep,explode,explode_value=10):
 def roll_dist(sides,rolls,keep,explode,explode_value,n_tries):
     data = []
     for i in range(n_tries):
-        data += [final_roll(sides,rolls,keep,explode)]
+        data += [roll_n_keep_ex(sides,rolls,keep,explode)]
     return data
 
     '''
